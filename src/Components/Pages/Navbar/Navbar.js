@@ -3,47 +3,69 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="bg-slate-700 p-5">
-      <div className="container mx-auto navbar">
-        <div className="flex-1">
-          <Link className="btn btn-ghost normal-case text-xl">
-            Learning With Love
-          </Link>
-        </div>
-        <div className="flex-none gap-2">
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered"
-            />
-          </div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://placeimg.com/80/80/people" alt="" />
+    <div>
+      <header aria-label="Page Header" className="bg-gray-50">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="flex items-center lg:justify-between justify-end gap-4">
+            <div className="hidden lg:block space-x-10">
+              <Link to="/home">Home</Link>
+              <Link to="/course">Course</Link>
+              <Link to="/blog">Blogs</Link>
+              <Link to="/contact">Contact</Link>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <label className="sr-only" htmlFor="search"></label>
+
+                  <input
+                    className="h-10 w-full rounded-full border-none bg-white pl-4 pr-10 text-sm shadow-sm sm:w-56"
+                    id="search"
+                    type="search"
+                    placeholder="Search website..."
+                  />
+
+                  <button
+                    type="button"
+                    className="absolute top-1/2 right-1 -translate-y-1/2 rounded-full bg-gray-50 p-2 text-gray-600 transition hover:text-gray-700"
+                  >
+                    <span className="sr-only">Submit Search</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <Link className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-              <li>
-                <Link>Settings</Link>
-              </li>
-              <li>
-                <Link>Logout</Link>
-              </li>
-            </ul>
+
+              <span
+                aria-hidden="true"
+                className="block h-6 w-px rounded-full bg-gray-200"
+              ></span>
+
+              <Link className="block shrink-0">
+                <span className="sr-only">Profile</span>
+                <img
+                  alt="Man"
+                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
     </div>
   );
 };
