@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
       <header aria-label="Page Header" className="bg-gray-50">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex items-center lg:justify-between justify-end gap-4">
             <div className="hidden lg:block space-x-10">
               <Link to="/home">Home</Link>
