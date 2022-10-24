@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Poppins: ["Poppins", " sans-serif"],
+        stylish: ["Great Vibes", "cursive"],
+        Dancing: ["Dancing Script", "cursive"],
+        Kalam: ["Kalam", "cursive"],
       },
     },
   },
