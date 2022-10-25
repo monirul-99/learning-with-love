@@ -4,8 +4,18 @@ import { AuthContext } from "../../../Context/UserContext";
 
 const Register = () => {
   const [error, setError] = useState(null);
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, handleUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleProfileUpdateInfo = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    handleUpdateProfile(profile)
+      .then(() => {})
+      .then((error) => console.error("Error", error));
+  };
 
   const handleSubmitBtn = (event) => {
     event.preventDefault();
@@ -15,7 +25,7 @@ const Register = () => {
     const photo = form.photoUrl.value;
     const password = form.password.value;
     const confirmPassword = form.confirm_password.value;
-    setUser(photo);
+    handleProfileUpdateInfo(name, photo);
     console.log(name, email, photo, password, confirmPassword);
 
     if (password.length < 6) {
@@ -116,7 +126,7 @@ const Register = () => {
                 className="no-underline border-b border-blue text-blue"
                 href="/"
               >
-                <Link to="/sign">Log in</Link>
+                <Link to="/signin">Log in</Link>
               </button>
             </div>
           </form>

@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/Firebase.config";
 import { toast } from "react-toastify";
@@ -23,6 +24,10 @@ const UserContext = ({ children }) => {
   const totalCost = priceTotal.reduce((previousValue, currentValue) => {
     return previousValue + parseFloat(currentValue);
   }, 0);
+
+  const handleUpdateProfile = (profile) => {
+    return updateProfile(auth.currentUser, profile);
+  };
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -76,6 +81,7 @@ const UserContext = ({ children }) => {
     handleFacebookProvider,
     logOut,
     setUser,
+    handleUpdateProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
