@@ -7,14 +7,14 @@ import { FaDownload } from "react-icons/fa";
 const CourseDetails = () => {
   const { Course, totalCost } = useContext(AuthContext);
   return (
-    <div className="mx-auto  dark:bg-gray-900 dark:text-gray-100">
+    <div className="mx-auto  dark:bg-gray-900 dark:text-gray-100 p-5">
       <div className="flex justify-center p-10">
         <button className="flex items-center px-8 py-3 font-semibold rounded-full dark:bg-gray-100 dark:text-gray-800">
           <span className="mx-3">PDF</span>
           <FaDownload />
         </button>
       </div>
-      <div className="flex flex-col p-6 space-y-4 sm:p-10 w-6/12 mx-auto border rounded-2xl">
+      <div className="flex flex-col p-5 space-y-4 sm:p-10 lg:w-6/12 mx-auto lg:border rounded-2xl">
         {/* <h2 className="text-xl font-semibold">Your cart</h2> */}
         <ul className="flex flex-col divide-y divide-gray-700">
           {Course.map((card, inX) => (

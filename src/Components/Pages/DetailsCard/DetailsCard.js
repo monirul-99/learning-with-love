@@ -1,14 +1,17 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/UserContext";
 
 const DetailsCard = ({ card }) => {
-  const { title, img, owner, price } = card;
+  const { title, img, owner, price, id } = card;
+  const { handleDeleteCourse } = useContext(AuthContext);
 
   return (
     <div>
       <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
         <div className="flex w-full space-x-2 sm:space-x-4">
           <img
-            className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+            className="flex-shrink-0 object-cover w-32 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
             src={img}
             alt="Polaroid camera"
           />
@@ -40,7 +43,7 @@ const DetailsCard = ({ card }) => {
                   <rect width="32" height="200" x="312" y="216"></rect>
                   <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                 </svg>
-                <span>Remove</span>
+                <span onClick={() => handleDeleteCourse(id)}>Remove</span>
               </button>
             </div>
           </div>

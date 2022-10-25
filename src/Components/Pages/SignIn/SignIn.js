@@ -3,13 +3,21 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../../Context/UserContext";
-import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
   const [error, setError] = useState(null);
-  const { signIn, handleGoogleProvider, user, handleFacebookProvider } =
-    useContext(AuthContext);
+  const {
+    signIn,
+    handleGoogleProvider,
+    handleGithubProvider,
+    handleFacebookProvider,
+  } = useContext(AuthContext);
 
   // console.log(user.photoURL);
   const navigate = useNavigate();
@@ -18,6 +26,7 @@ const SignIn = () => {
 
   const googleMama = new GoogleAuthProvider();
   const facebookMama = new FacebookAuthProvider();
+  const githubMama = new GithubAuthProvider();
   const googleSignIn = () => {
     handleGoogleProvider(googleMama)
       .then((result) => {
@@ -38,6 +47,18 @@ const SignIn = () => {
         console.error(error);
       });
   };
+
+  const githubSignIn = () => {
+    handleGithubProvider(githubMama)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -138,7 +159,11 @@ const SignIn = () => {
                   <FaFacebook />
                 </IconContext.Provider>
               </button>
-              <button ariaLabel="Log in with GitHub" className="p-3 rounded-sm">
+              <button
+                onClick={githubSignIn}
+                ariaLabel="Log in with GitHub"
+                className="p-3 rounded-sm"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"

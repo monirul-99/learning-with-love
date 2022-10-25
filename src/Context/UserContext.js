@@ -40,6 +40,10 @@ const UserContext = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
+  const handleGithubProvider = (provider) => {
+    return signInWithPopup(auth, provider);
+  };
+
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -47,6 +51,11 @@ const UserContext = ({ children }) => {
 
   const logOut = () => {
     return signOut(auth);
+  };
+
+  const handleDeleteCourse = (selectedDelete) => {
+    const remove = Course.filter((match) => match.id !== selectedDelete);
+    setCourse(remove);
   };
 
   const handleSelectedCourse = (selectedCourse, price) => {
@@ -80,9 +89,11 @@ const UserContext = ({ children }) => {
     loading,
     handleGoogleProvider,
     handleFacebookProvider,
+    handleGithubProvider,
     logOut,
     setUser,
     handleUpdateProfile,
+    handleDeleteCourse,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
