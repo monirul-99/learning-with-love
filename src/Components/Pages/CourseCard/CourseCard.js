@@ -6,7 +6,10 @@ const CourseCard = ({ item }) => {
   const { handleSelectedCourse } = useContext(AuthContext);
   return (
     <div>
-      <div className="block overflow-hidden rounded-2xl">
+      <div
+        className="block overflow-hidden rounded-2xl"
+        data-aos="zoom-in-right"
+      >
         <img alt="Office" src={img} className="h-56 w-full object-cover" />
 
         <div className="bg-gray-900 p-4">
@@ -71,14 +74,14 @@ const CourseCard = ({ item }) => {
 
           <p className="text-sm text-gray-500 mt-3">
             Price :
-            <span className="bg-yellow-300 rounded-sm text-slate-800 p-1.2 px-2">
+            <span className="mx-2 bg-yellow-300 rounded-sm text-slate-800 p-1.2 px-3">
               {price}
             </span>
           </p>
 
           <button className="mt-4 relative inline-flex items-center justify-center p-3 px-2 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border border-[#FF2F30] rounded-full shadow-md group">
             <span
-              onClick={() => handleSelectedCourse(item)}
+              onClick={() => handleSelectedCourse(item, price.slice(1))}
               className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#FF2F30] group-hover:translate-x-0 ease"
             >
               <svg
