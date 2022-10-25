@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../../../Context/UserContext";
 import CourseCard from "../CourseCard/CourseCard";
@@ -40,9 +40,11 @@ const Course = () => {
             </div>
           ) : undefined}
           {Course.length > 0 ? (
-            <button className="btn mt-5 btn-outline btn-success">
-              Checkout Now
-            </button>
+            <Link to="/courseDetails">
+              <button className="btn mt-5 btn-outline btn-success">
+                Course Details
+              </button>
+            </Link>
           ) : undefined}
         </h1>
       </div>

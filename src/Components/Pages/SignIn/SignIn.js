@@ -118,7 +118,7 @@ const SignIn = () => {
             <div className="flex justify-center space-x-4">
               <button
                 onClick={googleSignIn}
-                aria-label="Log in with Google"
+                ariaLabel="Log in with Google"
                 className="p-3 rounded-sm"
               >
                 <svg
@@ -131,17 +131,14 @@ const SignIn = () => {
               </button>
               <button
                 onClick={facebookSignIn}
-                aria-label="Log in with facebook"
+                ariaLabel="Log in with facebook"
                 className="p-3 rounded-sm"
               >
                 <IconContext.Provider value={{ size: 22 }}>
                   <FaFacebook />
                 </IconContext.Provider>
               </button>
-              <button
-                aria-label="Log in with GitHub"
-                className="p-3 rounded-sm"
-              >
+              <button ariaLabel="Log in with GitHub" className="p-3 rounded-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"

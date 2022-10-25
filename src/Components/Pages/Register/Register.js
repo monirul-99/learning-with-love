@@ -4,7 +4,7 @@ import { AuthContext } from "../../../Context/UserContext";
 
 const Register = () => {
   const [error, setError] = useState(null);
-  const { createUser, setUser, handleUpdateProfile } = useContext(AuthContext);
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleProfileUpdateInfo = (name, photoURL) => {
@@ -13,7 +13,10 @@ const Register = () => {
       photoURL: photoURL,
     };
     handleUpdateProfile(profile)
-      .then(() => {})
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
       .then((error) => console.error("Error", error));
   };
 
@@ -25,7 +28,7 @@ const Register = () => {
     const photo = form.photoUrl.value;
     const password = form.password.value;
     const confirmPassword = form.confirm_password.value;
-    handleProfileUpdateInfo(name, photo);
+
     console.log(name, email, photo, password, confirmPassword);
 
     if (password.length < 6) {
@@ -42,6 +45,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        handleProfileUpdateInfo(name, photo);
         navigate("/");
       })
       .catch((error) => {
