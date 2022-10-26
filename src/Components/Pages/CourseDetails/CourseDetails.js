@@ -2,21 +2,37 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
 import DetailsCard from "../DetailsCard/DetailsCard";
+import jsPDF from "jspdf";
 import { FaDownload } from "react-icons/fa";
 
 const CourseDetails = () => {
   const { Course, totalCost } = useContext(AuthContext);
+
+  const pageDownload = () => {
+    const doc = new jsPDF("p", "pt");
+    doc.html(document.querySelector("#pageDownload"), {
+      callback: function (pdf) {
+        pdf.save("CourseDEtails.pdf");
+      },
+    });
+  };
+
   return (
     <div className="mx-auto  dark:bg-gray-900 dark:text-gray-100 p-5">
       <div className="flex justify-center p-10">
-        <button className="flex items-center px-8 py-3 font-semibold rounded-full dark:bg-gray-100 dark:text-gray-800">
+        <button
+          onClick={pageDownload}
+          className="flex items-center px-8 py-3 font-semibold rounded-full dark:bg-gray-100 dark:text-gray-800"
+        >
           <span className="mx-3">PDF</span>
           <FaDownload />
         </button>
       </div>
-      <div className="flex flex-col p-5 space-y-4 sm:p-10 lg:w-6/12 mx-auto lg:border rounded-2xl">
-        {/* <h2 className="text-xl font-semibold">Your cart</h2> */}
-        <ul className="flex flex-col divide-y divide-gray-700">
+      <div className="flex flex-col p-5 space-y-4 sm:p-10 lg:w-6/12 mx-auto  rounded-2xl">
+        <ul
+          id="pageDownload"
+          className="flex flex-col divide-y divide-gray-700"
+        >
           {Course.map((card, inX) => (
             <DetailsCard key={inX} card={card}></DetailsCard>
           ))}

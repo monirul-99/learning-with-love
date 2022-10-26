@@ -56,6 +56,10 @@ const UserContext = ({ children }) => {
   const handleDeleteCourse = (selectedDelete) => {
     const remove = Course.filter((match) => match.id !== selectedDelete);
     setCourse(remove);
+    toast.success("Course Remove Success!", {
+      position: "top-right",
+      autoClose: 500,
+    });
   };
 
   const handleSelectedCourse = (selectedCourse, price) => {
@@ -68,6 +72,10 @@ const UserContext = ({ children }) => {
       return;
     } else {
       setCourse([...Course, selectedCourse]);
+      toast.success("Course Added !", {
+        position: "top-right",
+        autoClose: 500,
+      });
       setPriceTotal([...priceTotal, price]);
     }
   };

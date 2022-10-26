@@ -25,10 +25,10 @@ const Course = () => {
         </div>
       </section>
 
-      <div className="grid lg:col-span-2 bg-slate-700 justify-center rounded-xl mt-5 lg:mt-0">
+      <div className="grid lg:col-span-2 bg-slate-700 justify-center mt-5 lg:mt-0">
         <h1 className="text-3xl text-white text-center font-Poppins p-5 mt-14">
           Selected Course
-          <div className="grid grid-cols-7 gap-2 justify-between mt-12 p-4 ">
+          <div className="grid grid-cols-7 space-y-3 gap-2 justify-between mt-12 p-4 ">
             {Course.map((selectItems, inX) => (
               <SelectedCard key={inX} selectItems={selectItems}></SelectedCard>
             ))}

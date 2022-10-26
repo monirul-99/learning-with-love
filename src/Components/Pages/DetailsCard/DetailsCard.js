@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../../../Context/UserContext";
 
 const DetailsCard = ({ card }) => {
@@ -44,6 +45,8 @@ const DetailsCard = ({ card }) => {
                   <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                 </svg>
                 <span onClick={() => handleDeleteCourse(id)}>Remove</span>
+                <ToastContainer />
+                <ToastContainer />
               </button>
             </div>
           </div>

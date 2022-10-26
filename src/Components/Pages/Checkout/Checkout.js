@@ -8,7 +8,7 @@ const Checkout = () => {
   return (
     <div className="lg:p-48 pt-12">
       <section class="lg:w-[400px] mx-auto rounded-3xl shadow-2xl p-16 ">
-        <div class=" text-center sm:p-12">
+        <div class=" text-center">
           <p class="text-sm font-semibold tracking-widest text-pink-500">
             Your order is on the way
           </p>
