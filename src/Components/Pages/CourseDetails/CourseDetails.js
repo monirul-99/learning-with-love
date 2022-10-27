@@ -18,11 +18,11 @@ const CourseDetails = () => {
   };
 
   return (
-    <div className="mx-auto  dark:bg-gray-900 dark:text-gray-100 p-5">
-      <div className="flex justify-center p-10">
+    <div className="mx-auto bg-gray-900 text-white p-5">
+      <div className="flex justify-center  p-10">
         <button
           onClick={pageDownload}
-          className="flex items-center px-8 py-3 font-semibold rounded-full dark:bg-gray-100 dark:text-gray-800"
+          className="flex items-center px-8 py-3 font-semibold bg-orange-400 rounded-full"
         >
           <span className="mx-3">PDF</span>
           <FaDownload />

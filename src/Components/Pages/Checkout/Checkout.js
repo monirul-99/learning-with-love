@@ -14,7 +14,7 @@ const Checkout = () => {
           </p>
 
           <h2 class="mt-6 text-2xl font-bold">
-            <span className="text-white font-Kalam">{displayName} </span>
+            <span className="text-black font-Kalam">{displayName} </span>
             Thanks for your Enrolling, we're getting it ready!
           </h2>
 

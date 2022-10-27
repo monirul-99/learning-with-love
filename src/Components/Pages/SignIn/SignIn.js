@@ -71,16 +71,16 @@ const SignIn = () => {
   return (
     <div>
       <section className="bg-[#1F2937] ">
-        <div className="flex justify-center items-center h-[100vh] ">
-          <div className=" w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100">
-            <h1 className="text-2xl font-bold text-center">Login</h1>
+        <div className="flex justify-center items-center h-[100vh] text-white ">
+          <div className=" w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-900">
+            <h1 className="text-2xl font-bold  text-center">Login</h1>
             <form
               onSubmit={handleSignIn}
               action=""
               className="space-y-6 ng-untouched ng-pristine ng-valid"
             >
               <div className="space-y-1 text-sm">
-                <label htmlFor="username" className="block dark:text-gray-400">
+                <label htmlFor="username" className="block d text-gray-400">
                   Username
                 </label>
                 <input
@@ -88,11 +88,11 @@ const SignIn = () => {
                   name="username"
                   id="username"
                   placeholder="Username"
-                  className="w-full px-4 py-3 rounded-md border dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-4 py-3 rounded-md border  border-gray-700  bg-gray-900  :text-gray-100 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-1 text-sm">
-                <label htmlFor="password" className="block dark:text-gray-400">
+                <label htmlFor="password" className="block  text-gray-400">
                   Password
                 </label>
                 <input
@@ -100,7 +100,7 @@ const SignIn = () => {
                   name="password"
                   id="password"
                   placeholder="Password"
-                  className="w-full px-4 py-3 rounded-md border dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                 />
                 <div className="flex justify-end text-xs dark:text-gray-400">
                   <a rel="noopener noreferrer" href="/">
@@ -108,18 +108,17 @@ const SignIn = () => {
                   </a>
                 </div>
               </div>
-
               <p className="text-center p-2.5 text-[#FF9494]">{error}</p>
-              <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400">
+              <button className="block w-full p-3 text-center rounded-sm text-white bg-violet-400">
                 Sign in
               </button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
-              <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-              <p className="px-3 text-sm dark:text-gray-400">
+              <div className="flex-1 h-px sm:w-16 "></div>
+              <p className="px-3 text-sm  text-gray-400">
                 Login with social accounts
               </p>
-              <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+              <div className="flex-1 h-px sm:w-16 "></div>
             </div>
             <div className="flex justify-center space-x-4">
               <button
@@ -149,12 +148,9 @@ const SignIn = () => {
                 </svg>
               </button>
             </div>
-            <p className="text-xs text-center sm:px-6 dark:text-gray-400 mx-2">
+            <p className="text-xs text-center sm:px-6  mx-2">
               Don't have an account?
-              <button
-                rel="noopener noreferrer"
-                className="underline dark:text-gray-100 mx-2"
-              >
+              <button rel="noopener noreferrer" className="underline  mx-2">
                 <Link to="/register">Sign up</Link>
               </button>
             </p>
