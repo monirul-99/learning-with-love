@@ -16,7 +16,7 @@
 
 - Programming Skill Grow
 - Special Blogs For Developers
-- Google Facebook GitHub Provider Login System
+- Google GitHub Provider Login System
 - Private Route Process
 - Fake data Load From Node.js
 
