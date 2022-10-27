@@ -1,38 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
 import DetailsCard from "../DetailsCard/DetailsCard";
-import jsPDF from "jspdf";
 import { FaDownload } from "react-icons/fa";
+import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
   const { Course, totalCost } = useContext(AuthContext);
 
-  const pageDownload = () => {
-    const doc = new jsPDF("p", "pt");
-    doc.html(document.querySelector("#pageDownload"), {
-      callback: function (pdf) {
-        pdf.save("CourseDEtails.pdf");
-      },
-    });
-  };
+  const componentRef = useRef();
+  const reactPdfPrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "CourseDetails",
+    onafterprint: () => alert("Print Success"),
+  });
 
   return (
     <div className="mx-auto bg-gray-900 text-white p-5">
       <div className="flex justify-center  p-10">
         <button
-          onClick={pageDownload}
+          onClick={reactPdfPrint}
           className="flex items-center px-8 py-3 font-semibold bg-orange-400 rounded-full"
         >
           <span className="mx-3">PDF</span>
           <FaDownload />
         </button>
       </div>
-      <div className="flex flex-col p-5 space-y-4 sm:p-10 lg:w-6/12 mx-auto  rounded-2xl">
-        <ul
-          id="pageDownload"
-          className="flex flex-col divide-y divide-gray-700"
-        >
+      <div
+        ref={componentRef}
+        style={{ width: "100%", height: window.innerHeight }}
+        className="flex flex-col p-5 space-y-4 sm:p-10 lg:w-6/12 mx-auto  rounded-2xl"
+      >
+        <ul className="flex flex-col divide-y divide-gray-700">
           {Course.map((card, inX) => (
             <DetailsCard key={inX} card={card}></DetailsCard>
           ))}
