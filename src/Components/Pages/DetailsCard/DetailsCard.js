@@ -12,7 +12,7 @@ const DetailsCard = ({ card }) => {
       <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
         <div className="flex w-full space-x-2 sm:space-x-4">
           <img
-            className="flex-shrink-0 object-cover w-32 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+            className="flex-shrink-0 object-cover w-32 h-20 border-transparent rounded outline-none sm:w-32 sm:h-32 bg-gray-500"
             src={img}
             alt="Polaroid camera"
           />
@@ -22,7 +22,7 @@ const DetailsCard = ({ card }) => {
                 <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                   {title}
                 </h3>
-                <p className="text-sm dark:text-gray-400">{owner}</p>
+                <p className="text-sm text-gray-400">{owner}</p>
               </div>
               <div className="text-right">
                 <p className="text-lg font-semibold">{price}</p>

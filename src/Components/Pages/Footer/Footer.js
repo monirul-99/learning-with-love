@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
               <li>
                 <Link
-                  className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                  className=" transition hover:text-gray-700/75 text-white "
                   href="/"
                 >
                   Home
@@ -28,7 +28,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                  className="transition hover:text-gray-700/75   "
                   to="/course"
                 >
                   Course
@@ -36,19 +36,13 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link
-                  className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                  to="/faq"
-                >
+                <Link className="transition hover:text-gray-700/75 " to="/faq">
                   FAQ
                 </Link>
               </li>
 
               <li>
-                <Link
-                  className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                  to="/blog"
-                >
+                <Link className="transition hover:text-gray-700/75" to="/blog">
                   Blog
                 </Link>
               </li>
@@ -61,7 +55,7 @@ const Footer = () => {
                 href="https://www.facebook.com/groups/programmingherocommunity"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="transition hover:text-gray-700/75 "
               >
                 <span className="sr-only">Facebook</span>
                 <svg
@@ -84,7 +78,7 @@ const Footer = () => {
                 href="https://www.instagram.com/programminghero/?hl=en"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="transition hover:text-gray-700/75 "
               >
                 <span className="sr-only">Instagram</span>
                 <svg
@@ -107,7 +101,7 @@ const Footer = () => {
                 href="https://twitter.com/ProgrammingHero?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className=" transition hover:text-gray-700/75 "
               >
                 <span className="sr-only">Twitter</span>
                 <svg
@@ -126,7 +120,7 @@ const Footer = () => {
                 href="https://github.com/ProgrammingHero1"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className=" transition hover:text-gray-700/75 "
               >
                 <span className="sr-only">GitHub</span>
                 <svg

@@ -51,7 +51,7 @@ const CourseDetails = () => {
           <Link to="/course">
             <button
               type="button"
-              className="px-6 py-2 border rounded-md dark:border-violet-400"
+              className="px-6 py-2 border rounded-md border-violet-400"
             >
               Back
               <span className="sr-only sm:not-sr-only"> to Course</span>
@@ -60,7 +60,7 @@ const CourseDetails = () => {
           <Link to="/checkOut">
             <button
               type="button"
-              className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
+              className="px-6 py-2 border rounded-md bg-violet-400 text-gray-900 border-violet-400"
             >
               <span className="sr-only sm:not-sr-only">Continue to </span>
               Checkout
