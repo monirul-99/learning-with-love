@@ -1,13 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { IconContext } from "react-icons";
-import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../../Context/UserContext";
-import {
-  FacebookAuthProvider,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-} from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
@@ -15,7 +9,6 @@ const SignIn = () => {
   const { signIn, handleGoogleProvider, handleGithubProvider } =
     useContext(AuthContext);
 
-  // console.log(user.photoURL);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
